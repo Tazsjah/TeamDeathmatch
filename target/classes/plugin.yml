@@ -1,0 +1,23 @@
+name: TeamDM
+version: 0.7.24
+description: A classic team vs team game
+api-version: 1.18
+author: Tazsjah
+main: me.Tazsjah.TeamDM.Main
+commands:
+    svd:
+        description: Shows a list of commands that can be executed
+    setlobby:
+        description: Sets the lobby for when a players joins the game
+    setpoint:
+        description: Sets the spawnpoint for each team (slayers | dragons)
+    forcestop:
+        description: This forcefully stops the current game
+    forcestart:
+        description: This forcefully starts the game
+    remove:
+        description: Removes a player from the game
+    howto:
+        description: Instructions on playing the game
+    setend:
+        description: This sets the end of the game spawn

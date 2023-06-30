@@ -1,0 +1,67 @@
+
+# ===================================================
+#  THIS SECTION BELOW IS FOR MESSAGES
+# ===================================================
+
+
+# ______________
+
+# Game Prefix
+# ______________
+
+prefix: '&eGame &8» &7'
+
+
+
+# ______________
+
+# Join/Leave Message
+# ______________
+
+#This is the message shown to all players when a player joins & leaves the game
+#Placeholders are listed below
+# %leave = Player that left the game
+# %player = A personal player
+# %status = The status of the game WAITING / COUNTING
+# ______________
+
+join-message: '&c%player &7has joined the game. &e%status&7/&e10'
+leave-message: '&c%player &7has left the game. &e%status&7/&e10'
+
+
+
+# ______________
+
+# Permission Message
+# ______________
+
+deny-message: '&cYou have no permission to execute this'
+
+
+
+# ______________
+
+# Timer Messages
+# ______________
+#
+# Placeholders : %seconds
+#
+counting-msg: '&7Game will be starting in &c%seconds&7s'
+not-enough: '&7Game stopped, not enough players now waiting...'
+starting: '&7Starting game, enjoy!'
+game-ending: '&7Game ending in &c%seconds&7s'
+
+
+# ______________
+
+# Team Messages
+# ______________
+
+slayer-message: '&7You are now a &l&lSlayer'
+dragon-message: '&7You are now a &5&lDragon'
+slayer-win: '&7&k| &b&k| &d&k|&r &eSlayers &7wins the game! &7&k| &b&k| &d&k|'
+dragon-win: '&7&k| &b&k| &d&k|&r &5Dragons &7wins the game! &7&k| &b&k| &d&k|'
+team-draw: '&7&k| &b&k| &d&k|&r &aRound is a Draw! &7&k| &b&k| &d&k|'
+
+
+
