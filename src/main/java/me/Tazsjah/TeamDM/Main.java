@@ -9,6 +9,7 @@ import me.Tazsjah.TeamDM.Commands.Help;
 import me.Tazsjah.TeamDM.Commands.HowTo;
 import me.Tazsjah.TeamDM.Commands.Lobby;
 import me.Tazsjah.TeamDM.Commands.Remove;
+import me.Tazsjah.TeamDM.Commands.SetEnd;
 import me.Tazsjah.TeamDM.Commands.SetPoint;
 import me.Tazsjah.TeamDM.Events.Combat;
 import me.Tazsjah.TeamDM.Events.General;

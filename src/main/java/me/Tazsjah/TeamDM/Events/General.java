@@ -47,7 +47,7 @@ public class General implements Listener {
 	public HashMap<UUID, String> teams = new HashMap<UUID, String>(); // THIS IS THE TEAMS SET
 	public HashMap<String, Integer> teampoints = new HashMap<String, Integer>(); // THIS IS THE TEAM POINTS
 	public int cdTimer = 10;
-	public int gameTimer = 60;
+	public int gameTimer = 300;
 	public int endTimer = 10;
 
 
@@ -165,6 +165,9 @@ public class General implements Listener {
 		movePlayers();
 		setScore();
 		gameTimer();
+		for(Player p : Bukkit.getOnlinePlayers()) {
+			p.playSound(p.getLocation(), Sound.ENTITY_ENDER_DRAGON_GROWL, 1, 1);
+		}
 	}
 
 	public void checkState() {

@@ -8,6 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -15,6 +16,7 @@ import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffect;
@@ -41,6 +43,13 @@ public class Map implements Listener {
 	@EventHandler
 	public void onHunger(FoodLevelChangeEvent event) {
 		if(!GameState.isState(GameState.GAME)) {
+			event.setCancelled(true);
+		}
+	}
+	
+	@EventHandler
+	public void onUse(PlayerInteractEvent event) {
+		if(event.getAction() == Action.RIGHT_CLICK_BLOCK) {
 			event.setCancelled(true);
 		}
 	}

@@ -1,4 +1,4 @@
-package me.Tazsjah.TeamDM;
+package me.Tazsjah.TeamDM.Commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
