@@ -105,6 +105,7 @@ public class General implements Listener {
 				announce(msg);
 				if(players.size() <= 0) {
 					GameState.setState(GameState.HALT);
+					kickAll();
 					Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Game is now halted");
 				}
 			}
@@ -198,7 +199,6 @@ public class General implements Listener {
 	}
 
 	public void kickAll() {
-		
 		cdTimer = 10;
 		gameTimer = 300;
 		endTimer = 10;
@@ -207,12 +207,9 @@ public class General implements Listener {
 		teampoints.clear();
 		GameState.setState(GameState.HALT);
 		
-		
 		for(Player p : Bukkit.getOnlinePlayers()) {
 			p.kickPlayer(null);
-		}
-		
-
+		}	
 		
 		for(Entity e : lm.getLobby().getWorld().getEntities()) {
 			e.remove();
@@ -299,6 +296,10 @@ public class General implements Listener {
 			@Override
 			public void run() {
 				score();
+				if(!GameState.isState(GameState.COUNTING)) {
+					this.cancel();
+				}
+				
 				if(GameState.getState() == GameState.COUNTING) {
 					if(cdTimer > 0) {
 						if(playerCheck() == true) {
@@ -332,6 +333,9 @@ public class General implements Listener {
 		new BukkitRunnable() {
 			@Override
 			public void run() {
+				if(!GameState.isState(GameState.GAME)) {
+					this.cancel();
+				}
 				if(GameState.getState() == GameState.GAME) {
 					if(gameTimer > 0) {
 						gameTimer--;
@@ -386,6 +390,9 @@ public class General implements Listener {
 		new BukkitRunnable() {
 			@Override
 			public void run() {
+				if(!(GameState.isState(GameState.DRAW) || GameState.isState(GameState.DRAGONW) || GameState.isState(GameState.SLAYERSW))) {
+					this.cancel();
+				}
 				if(endTimer > 0) {
 					if(endTimer <= 5) {
 						String msg = config.endTimer().replace("%seconds", endTimer + "");

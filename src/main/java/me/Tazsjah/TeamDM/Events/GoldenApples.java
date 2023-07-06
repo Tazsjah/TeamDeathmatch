@@ -21,15 +21,15 @@ public class GoldenApples implements Listener {
 				Player p = event.getPlayer();
 				if(amount > 1){
 					event.getPlayer().getInventory().getItemInMainHand().setAmount(amount - 1);
-					PotionEffect ab = new PotionEffect(PotionEffectType.ABSORPTION, 2400, 0);
-					PotionEffect rg = new PotionEffect(PotionEffectType.REGENERATION, 100, 2);
+					PotionEffect ab = new PotionEffect(PotionEffectType.ABSORPTION, 2400, 1);
+					PotionEffect rg = new PotionEffect(PotionEffectType.REGENERATION, 100, 1);
 					p.addPotionEffect(ab);
 					p.addPotionEffect(rg);
 					p.playSound(p, Sound.ENTITY_PLAYER_BURP, 1, 1);
 				} else {
 					p.getInventory().getItemInMainHand().setAmount(0);
-					PotionEffect ab = new PotionEffect(PotionEffectType.ABSORPTION, 2400, 0);
-					PotionEffect rg = new PotionEffect(PotionEffectType.REGENERATION, 100, 2);
+					PotionEffect ab = new PotionEffect(PotionEffectType.ABSORPTION, 2400, 1);
+					PotionEffect rg = new PotionEffect(PotionEffectType.REGENERATION, 100, 1);
 					p.addPotionEffect(ab);
 					p.addPotionEffect(rg);
 					p.playSound(p, Sound.ENTITY_PLAYER_BURP, 1, 1);

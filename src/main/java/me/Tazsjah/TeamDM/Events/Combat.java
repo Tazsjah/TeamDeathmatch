@@ -68,7 +68,8 @@ public class Combat implements Listener {
 					Player victim = (Player) event.getEntity();
 					Player attacker = (Player) event.getEntity().getKiller();
 					String team = general.teams.get(attacker.getUniqueId());
-					general.addPoint(team);
+					
+					
 					ItemStack apple = new ItemStack(Material.GOLDEN_APPLE);
 					attacker.getInventory().addItem(apple);
 					ItemStack food = new ItemStack(Material.COOKED_BEEF);
@@ -77,10 +78,12 @@ public class Combat implements Listener {
 					if(team == "slayers") {
 						victim.teleport(lm.getA());
 						event.setDeathMessage(ChatColor.translateAlternateColorCodes('&', "&c" + victim.getName() + "&7 has been killed by" + "&c " + attacker.getName() + " &7(&d+1 &eSlayers&7)"));
+						general.addPoint(team);
 					}
 					if(team == "dragons") {
 						victim.teleport(lm.getB());
 						event.setDeathMessage(ChatColor.translateAlternateColorCodes('&', "&c" + victim.getName() + "&7 has been killed by" + "&c " + attacker.getName() + " &7(&d+1 &5Dragons&7)"));
+						general.addPoint(team);
 					}
 				}
 			}

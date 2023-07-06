@@ -18,6 +18,7 @@ import me.Tazsjah.TeamDM.Events.Map;
 import me.Tazsjah.TeamDM.Managers.GameState;
 import me.Tazsjah.TeamDM.Managers.KitManager;
 import me.Tazsjah.TeamDM.Managers.LocationManager;
+import me.Tazsjah.TeamDM.Managers.ProtectionManager;
 import me.Tazsjah.TeamDM.Utils.Config;
 import me.Tazsjah.TeamDM.Utils.Sidebar;
 import net.md_5.bungee.api.ChatColor;
@@ -34,9 +35,9 @@ public class Main extends JavaPlugin {
 	Help help = new Help(config);
 	Lobby arena = new Lobby(config, lm);
 	SetPoint sp = new SetPoint(lm, config);
-	Map map = new Map(general, lm);
 	Combat ch = new Combat(general, lm, km);
-
+	Map map = new Map(general, lm);
+	
 	public void onEnable() {
 		
 		// Startup Events
@@ -61,6 +62,7 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(ch, this);
 		Bukkit.getPluginManager().registerEvents(new GoldenApples(), this);
 		Bukkit.getPluginManager().registerEvents(new HowTo(), this);
+		Bukkit.getPluginManager().registerEvents(new ProtectionManager(), this);
 	}
 	
 
